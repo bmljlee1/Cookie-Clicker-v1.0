@@ -18,6 +18,10 @@ const bigCookieImage = document.getElementById("bigCookie");
 const upgradeContainer = document.getElementById("buttonContainer");
 const chompSound = new Audio("chomp.wav");
 chompSound.volume = 0.05;
+const upgradeSound = new Audio("upgrade.wav");
+upgradeSound.volume = 0.2;
+const errorSound = new Audio("error.wav");
+errorSound.volume = 0.3;
 
 function showNotification(message) {
   const notification = document.getElementById("notification");
@@ -70,10 +74,13 @@ function createUpgradeButtons(upgrades) {
       if (totalCookies >= upgrade.cost) {
         totalCookies -= upgrade.cost;
         cookiesPerSecond += upgrade.increase;
+        upgradeSound.currentTime = 0;
+        upgradeSound.play();
         updateUI();
         saveGame();
       } else {
         showNotification("You don't have enough cookies!!!!!");
+        errorSound.play();
       }
     });
     buttonContainer.appendChild(button);
@@ -105,3 +112,5 @@ function loadGame() {
 addEventListener("load", function () {
   loadGame();
 });
+
+setInterval(saveGame, 1000);
