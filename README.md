@@ -19,3 +19,10 @@ Coding Language Used:
 - JavaScript
 
 Please follow this address to try this game!
+
+REFLECTION:
+
+This was even tougher than the last one!
+
+I could not handle the try/catch errors. perhaps we can go over this in class? I dont quite understand what it is, even after googling.
+I also tried my best to add interesting animations to it for example when upgrades are clicked i wanted them to float around at the bottom of the screen but could not do it sadly
